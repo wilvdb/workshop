@@ -1,10 +1,14 @@
 package acme
 
+import org.spockframework.runtime.model.parallel.ResourceAccessMode
+import org.spockframework.runtime.model.parallel.Resources
 
+import spock.lang.ResourceLockChildren
 import spock.lang.Specification
 import spock.lang.Subject
 
 
+@ResourceLockChildren(value=Resources.SYSTEM_PROPERTIES, mode = ResourceAccessMode.READ)
 class MathSpec extends Specification {
 
     @Subject

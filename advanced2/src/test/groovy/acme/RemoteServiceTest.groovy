@@ -9,8 +9,10 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.http.HttpStatus
 
+import spock.lang.ResourceLockChildren
 import spock.lang.Specification
 
+@ResourceLockChildren(SharedResources.MOCKSERVER)
 @SpringBootTest
 class RemoteServiceTest extends Specification {
 
