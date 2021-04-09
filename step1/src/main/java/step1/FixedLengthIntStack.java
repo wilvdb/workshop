@@ -9,18 +9,18 @@ public class FixedLengthIntStack {
     }
 
     public int getSize() {
-        return 0;
+        return current;
     }
 
     public int getCapacity() {
-        return 0;
+        return store.length;
     }
 
     public int pop() {
-        return store[current];
+        return store[--current];
     }
 
     public void push(int item) {
-        store[current] = item;
+        store[current++] = item;
     }
 }
